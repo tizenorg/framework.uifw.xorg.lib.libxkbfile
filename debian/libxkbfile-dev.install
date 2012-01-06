@@ -1,0 +1,5 @@
+usr/include/X11/*
+usr/lib/libxkbfile.a
+usr/lib/libxkbfile.so
+usr/lib/libxkbfile.la
+usr/lib/pkgconfig/xkbfile.pc
