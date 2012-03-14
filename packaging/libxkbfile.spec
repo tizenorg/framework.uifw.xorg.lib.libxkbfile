@@ -10,6 +10,7 @@ Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{versio
 Requires(post):  /sbin/ldconfig
 Requires(postun):  /sbin/ldconfig
 BuildRequires:  pkgconfig(x11)
+BuildRequires:  pkgconfig(xorg-macros)
 
 BuildRoot:  %{_tmppath}/%{name}-%{version}-build
 
@@ -32,7 +33,7 @@ Description: %{summary}
 
 
 %build
-
+%autogen --disable-static
 %configure \
 	LDFLAGS="-Wl,--hash-style=both -Wl,--as-needed"
 
