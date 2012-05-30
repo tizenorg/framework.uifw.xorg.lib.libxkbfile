@@ -6,6 +6,7 @@ Group:      System/Libraries
 License:    MIT
 URL:        http://www.x.org
 Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.gz
+Source1001: packaging/libxkbfile.manifest 
 Requires(post):  /sbin/ldconfig
 Requires(postun):  /sbin/ldconfig
 BuildRequires:  pkgconfig(x11)
@@ -32,6 +33,7 @@ Description: %{summary}
 
 
 %build
+cp %{SOURCE1001} .
 %autogen --disable-static
 %configure \
 	LDFLAGS="-Wl,--hash-style=both -Wl,--as-needed"
@@ -56,6 +58,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest libxkbfile.manifest
 %defattr(-,root,root,-)
 %doc COPYING ChangeLog
 %{_libdir}/libxkbfile.so.1
@@ -63,6 +66,7 @@ rm -rf %{buildroot}
 
 
 %files devel
+%manifest libxkbfile.manifest
 %defattr(-,root,root,-)
 %dir %{_includedir}/X11
 %dir %{_includedir}/X11/extensions
