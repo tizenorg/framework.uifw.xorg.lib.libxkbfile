@@ -2,7 +2,7 @@ Name:       libxkbfile
 Summary:    X.Org X11 libxkbfile runtime library
 Version:    1.0.7
 Release:    1
-Group:      System/Libraries
+Group:      Graphics/X Window System
 License:    MIT
 URL:        http://www.x.org
 Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.gz
